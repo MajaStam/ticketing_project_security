@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Configuration
-public class SecurityConfig {
+@Configuration  // @Component
+public class SecurityConfig {  // Bean
 
     private final SecurityService securityService;
     private final AuthSuccessHandler authSuccessHandler;
@@ -28,7 +28,7 @@ public class SecurityConfig {
         this.authSuccessHandler = authSuccessHandler;
     }
 
-    //    @Bean
+//    @Bean
 //    public UserDetailsService userDetailsService(PasswordEncoder encoder){
 //
 //        List<UserDetails> userList = new ArrayList<>();
@@ -58,7 +58,6 @@ public class SecurityConfig {
 //                .antMatchers("/task/**").hasAnyRole("EMPLOYEE","ADMIN")
 //                .antMatchers("/task/**").hasAuthority("ROLE_EMPLOYEE")
                 .antMatchers(
-                        "/",
                         "/login",
                         "/fragments/**",
                         "/assets/**",
